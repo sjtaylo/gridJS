@@ -24,7 +24,6 @@ function createGrid (maxGridWidth, maxGridHeight) {
         var curCoord;
         var y = 0;
         var x = 0;
-        var isValid;
         
         while(y < maxGridHeight) {
             x = 0;
@@ -32,10 +31,8 @@ function createGrid (maxGridWidth, maxGridHeight) {
             while(x < maxGridWidth) {
                 var width = Math.ceil(Math.random() * 2);
                 var height = Math.ceil(Math.random() * 2);
-                isValid = true;
                  
                 if(height === 2 && width === 1) {
-                    isValid = false;
                     continue; 
                 }
                 
