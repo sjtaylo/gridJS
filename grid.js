@@ -18,7 +18,7 @@ function displayGrid() { //Test method to visualize generation of the grid.
     }
 }
 
-function createGrid (maxGridWidth, maxGridHeight) {
+function createGrid(maxGridWidth, maxGridHeight) {
         var grid = [];
         var nextRowFilled = [];
         var curCoord;
