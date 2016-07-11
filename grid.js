@@ -1,21 +1,21 @@
-function displayGrid() { //Test method to visualize generation of the grid.
-    var maxWidth = document.getElementById('width').value;
-    var maxHeight = document.getElementById('height').value;
+function displayGrid(maxHeight, maxWidth, blockSize) { //Test method to visualize generation of the grid.
     var grid = createGrid(maxWidth,maxHeight);
-    document.getElementById('grid').innerHTML = '';
+    var gridDiv = document.createElement("DIV");
     
     for (var i = 0; i < grid.length; i ++) {
         var gridObject = document.createElement("DIV");
            
         gridObject.style.position = 'absolute';
-        gridObject.style.height = (grid[i].h * 150 - 3) + 'px';
-        gridObject.style.width = (grid[i].w * 150 - 3) + 'px'; 
-        gridObject.style.left = (grid[i].x * 150 + 153) + 'px';
-        gridObject.style.top = (grid[i].y * 150 + 153) + 'px';
+        gridObject.style.height = (grid[i].h * blockSize - 3) + 'px';
+        gridObject.style.width = (grid[i].w * blockSize - 3) + 'px'; 
+        gridObject.style.left = (grid[i].x * blockSize) + 'px';
+        gridObject.style.top = (grid[i].y * blockSize) + 'px';
         gridObject.style.backgroundColor = 'red';
         
-        document.getElementById('grid').appendChild(gridObject);
+        gridDiv.appendChild(gridObject);
     }
+
+    return gridDiv;
 }
 
 function createGrid(maxGridWidth, maxGridHeight) {

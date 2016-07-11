@@ -5,14 +5,24 @@
   <meta charset="utf-8">
   <title>Random Grid Test</title>
   <script src="grid.js"></script>
+  <script>
+      function makeGrid() {
+        var maxWidth = document.getElementById('width').value;
+        var maxHeight = document.getElementById('height').value;
+        var blockSize = document.getElementById('block-size').value;
+        document.getElementById('grid').innerHTML = '';
+        document.getElementById('grid').appendChild(displayGrid(maxHeight, maxWidth, blockSize));
+      }
+  </script>
 </head>
 
 <body>
     <span> Maximum Width: </span> <input id="width" type="text"/> </br>
     <span> Maximum Height: </span><input id="height" type="text"/> </br>
-    <button onclick="displayGrid()"> Generate Grid </button>
+    <spam> Block Size: </span> <input id="block-size" type="text"/> </br>
+    <button onclick="makeGrid()"> Generate Grid </button>
     
-    <div id="grid" style="width:130px;height:500px;">
+    <div id="grid" style="position:absolute;width:130px;height:500px;top:153px;left:153px;">
         
     </div>
 </body>
